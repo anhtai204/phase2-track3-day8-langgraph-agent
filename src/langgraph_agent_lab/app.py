@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import json
 import sqlite3
@@ -7,6 +8,9 @@ from typing import Any
 from langgraph_agent_lab.graph import build_graph
 from langgraph_agent_lab.persistence import build_checkpointer
 from langgraph_agent_lab.state import initial_state, Scenario, Route
+
+# Enable real interrupts for the UI demo
+os.environ["LANGGRAPH_INTERRUPT"] = "true"
 
 # Page config
 st.set_page_config(

@@ -1,0 +1,1806 @@
+{
+  "total_scenarios": 7,
+  "success_rate": 1.0,
+  "avg_nodes_visited": 30.714285714285715,
+  "total_retries": 15,
+  "total_interrupts": 8,
+  "resume_success": false,
+  "scenario_metrics": [
+    {
+      "scenario_id": "S01_simple",
+      "success": true,
+      "expected_route": "simple",
+      "actual_route": "simple",
+      "nodes_visited": 20,
+      "retry_count": 0,
+      "interrupt_count": 0,
+      "approval_required": false,
+      "approval_observed": false,
+      "latency_ms": 0,
+      "errors": [],
+      "events": [
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 27
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=simple",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 27
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=simple",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 27
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=simple",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 27
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=simple",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 27
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=simple",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        }
+      ],
+      "messages": [
+        "intake: How do I reset my password?",
+        "intake: How do I reset my password?",
+        "intake: How do I reset my password?",
+        "intake: How do I reset my password?",
+        "intake: How do I reset my password?"
+      ]
+    },
+    {
+      "scenario_id": "S02_tool",
+      "success": true,
+      "expected_route": "tool",
+      "actual_route": "tool",
+      "nodes_visited": 30,
+      "retry_count": 0,
+      "interrupt_count": 0,
+      "approval_required": false,
+      "approval_observed": false,
+      "latency_ms": 0,
+      "errors": [],
+      "events": [
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 42
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=tool",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 42
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=tool",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 42
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=tool",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 42
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=tool",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 42
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=tool",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        }
+      ],
+      "messages": [
+        "intake: Please lookup order status for order 12345",
+        "intake: Please lookup order status for order 12345",
+        "intake: Please lookup order status for order 12345",
+        "intake: Please lookup order status for order 12345",
+        "intake: Please lookup order status for order 12345"
+      ]
+    },
+    {
+      "scenario_id": "S03_missing",
+      "success": true,
+      "expected_route": "missing_info",
+      "actual_route": "missing_info",
+      "nodes_visited": 20,
+      "retry_count": 0,
+      "interrupt_count": 0,
+      "approval_required": false,
+      "approval_observed": false,
+      "latency_ms": 0,
+      "errors": [],
+      "events": [
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 15
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=missing_info",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "clarify",
+          "event_type": "completed",
+          "message": "missing information requested",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 15
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=missing_info",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "clarify",
+          "event_type": "completed",
+          "message": "missing information requested",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 15
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=missing_info",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "clarify",
+          "event_type": "completed",
+          "message": "missing information requested",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 15
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=missing_info",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "clarify",
+          "event_type": "completed",
+          "message": "missing information requested",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 15
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=missing_info",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "clarify",
+          "event_type": "completed",
+          "message": "missing information requested",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        }
+      ],
+      "messages": [
+        "intake: Can you fix it?",
+        "intake: Can you fix it?",
+        "intake: Can you fix it?",
+        "intake: Can you fix it?",
+        "intake: Can you fix it?"
+      ]
+    },
+    {
+      "scenario_id": "S04_risky",
+      "success": true,
+      "expected_route": "risky",
+      "actual_route": "risky",
+      "nodes_visited": 35,
+      "retry_count": 0,
+      "interrupt_count": 4,
+      "approval_required": true,
+      "approval_observed": true,
+      "latency_ms": 0,
+      "errors": [],
+      "events": [
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 48
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Refund this customer and send confirmation email'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 48
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Refund this customer and send confirmation email'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 48
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Refund this customer and send confirmation email'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 48
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Refund this customer and send confirmation email'"
+          }
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 48
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Refund this customer and send confirmation email'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        }
+      ],
+      "messages": [
+        "intake: Refund this customer and send confirmation email",
+        "intake: Refund this customer and send confirmation email",
+        "intake: Refund this customer and send confirmation email",
+        "intake: Refund this customer and send confirmation email",
+        "intake: Refund this customer and send confirmation email"
+      ]
+    },
+    {
+      "scenario_id": "S05_error",
+      "success": true,
+      "expected_route": "error",
+      "actual_route": "error",
+      "nodes_visited": 50,
+      "retry_count": 10,
+      "interrupt_count": 0,
+      "approval_required": false,
+      "approval_observed": false,
+      "latency_ms": 0,
+      "errors": [
+        "transient failure attempt=1",
+        "transient failure attempt=2",
+        "transient failure attempt=1",
+        "transient failure attempt=2",
+        "transient failure attempt=1",
+        "transient failure attempt=2",
+        "transient failure attempt=1",
+        "transient failure attempt=2",
+        "transient failure attempt=1",
+        "transient failure attempt=2"
+      ],
+      "events": [
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 40
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result indicates failure, retry needed",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 2
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=2",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 40
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result indicates failure, retry needed",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 2
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=2",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 40
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result indicates failure, retry needed",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 2
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=2",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 40
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result indicates failure, retry needed",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 2
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=2",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 40
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result indicates failure, retry needed",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 2
+          }
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=2",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        }
+      ],
+      "messages": [
+        "intake: Timeout failure while processing request",
+        "intake: Timeout failure while processing request",
+        "intake: Timeout failure while processing request",
+        "intake: Timeout failure while processing request",
+        "intake: Timeout failure while processing request"
+      ]
+    },
+    {
+      "scenario_id": "S06_delete",
+      "success": true,
+      "expected_route": "risky",
+      "actual_route": "risky",
+      "nodes_visited": 35,
+      "retry_count": 0,
+      "interrupt_count": 4,
+      "approval_required": true,
+      "approval_observed": true,
+      "latency_ms": 0,
+      "errors": [],
+      "events": [
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 50
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Delete customer account after support verification'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 50
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Delete customer account after support verification'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 50
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Delete customer account after support verification'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 50
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Delete customer account after support verification'"
+          }
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 50
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=risky",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "risky_action",
+          "event_type": "pending_approval",
+          "message": "approval required",
+          "latency_ms": 0,
+          "metadata": {
+            "action": "Executing risky action based on query: 'Delete customer account after support verification'"
+          }
+        },
+        {
+          "node": "approval",
+          "event_type": "completed",
+          "message": "approved=True",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "tool",
+          "event_type": "completed",
+          "message": "tool executed attempt=0",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "evaluate",
+          "event_type": "completed",
+          "message": "tool result satisfactory",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "answer",
+          "event_type": "completed",
+          "message": "answer generated",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        }
+      ],
+      "messages": [
+        "intake: Delete customer account after support verification",
+        "intake: Delete customer account after support verification",
+        "intake: Delete customer account after support verification",
+        "intake: Delete customer account after support verification",
+        "intake: Delete customer account after support verification"
+      ]
+    },
+    {
+      "scenario_id": "S07_dead_letter",
+      "success": true,
+      "expected_route": "error",
+      "actual_route": "error",
+      "nodes_visited": 25,
+      "retry_count": 5,
+      "interrupt_count": 0,
+      "approval_required": false,
+      "approval_observed": false,
+      "latency_ms": 0,
+      "errors": [
+        "transient failure attempt=1",
+        "transient failure attempt=1",
+        "transient failure attempt=1",
+        "transient failure attempt=1",
+        "transient failure attempt=1"
+      ],
+      "events": [
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 53
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "dead_letter",
+          "event_type": "completed",
+          "message": "max retries exceeded, attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 53
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "dead_letter",
+          "event_type": "completed",
+          "message": "max retries exceeded, attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 53
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "dead_letter",
+          "event_type": "completed",
+          "message": "max retries exceeded, attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 53
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "dead_letter",
+          "event_type": "completed",
+          "message": "max retries exceeded, attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "intake",
+          "event_type": "completed",
+          "message": "query normalized",
+          "latency_ms": 0,
+          "metadata": {
+            "length": 53
+          }
+        },
+        {
+          "node": "classify",
+          "event_type": "completed",
+          "message": "route=error",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "retry",
+          "event_type": "completed",
+          "message": "retry attempt recorded",
+          "latency_ms": 0,
+          "metadata": {
+            "attempt": 1
+          }
+        },
+        {
+          "node": "dead_letter",
+          "event_type": "completed",
+          "message": "max retries exceeded, attempt=1",
+          "latency_ms": 0,
+          "metadata": {}
+        },
+        {
+          "node": "finalize",
+          "event_type": "completed",
+          "message": "workflow finished",
+          "latency_ms": 0,
+          "metadata": {}
+        }
+      ],
+      "messages": [
+        "intake: System failure cannot recover after multiple attem",
+        "intake: System failure cannot recover after multiple attem",
+        "intake: System failure cannot recover after multiple attem",
+        "intake: System failure cannot recover after multiple attem",
+        "intake: System failure cannot recover after multiple attem"
+      ]
+    }
+  ]
+}

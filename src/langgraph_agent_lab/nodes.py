@@ -118,25 +118,25 @@ def approval_node(state: AgentState) -> dict:
     Set LANGGRAPH_INTERRUPT=true to use real interrupt() for HITL demos.
     Default uses mock decision so tests and CI run offline.
 
-    TODO(student): implement reject/edit decisions and timeout escalation.
-    """
+    TODO(student): implement reject/edit decisions and timeout escalation."""
     import os
-
     from langgraph.types import interrupt
 
-    # The interrupt() function will suspend the node and return the value 
-    # provided when the graph is resumed (via invoke/stream).
-    decision_input = interrupt({
-        "proposed_action": state.get("proposed_action"),
-        "risk_level": state.get("risk_level"),
-        "query": state.get("query")
-    })
-    
-    # Process the input from the user
-    if isinstance(decision_input, dict) and "approved" in decision_input:
-        decision = ApprovalDecision(**decision_input)
+    # If LANGGRAPH_INTERRUPT is true, we use real human-in-the-loop (HITL)
+    if os.getenv("LANGGRAPH_INTERRUPT", "").lower() == "true":
+        decision_input = interrupt({
+            "proposed_action": state.get("proposed_action"),
+            "risk_level": state.get("risk_level"),
+            "query": state.get("query")
+        })
+        
+        if isinstance(decision_input, dict) and "approved" in decision_input:
+            decision = ApprovalDecision(**decision_input)
+        else:
+            decision = ApprovalDecision(approved=bool(decision_input))
     else:
-        decision = ApprovalDecision(approved=bool(decision_input))
+        # Automated test/CLI mode: mock approval
+        decision = ApprovalDecision(approved=True, comment="automated mock approval")
         
     return {
         "approval": decision.model_dump(),
