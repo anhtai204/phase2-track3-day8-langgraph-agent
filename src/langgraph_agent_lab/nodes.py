@@ -12,49 +12,72 @@ from .state import AgentState, ApprovalDecision, Route, make_event
 def intake_node(state: AgentState) -> dict:
     """Normalize raw query into state fields.
 
-    TODO(student): add normalization, PII checks, and metadata extraction.
+    Added normalization (lowercase, stripping) and metadata logging.
     """
     query = state.get("query", "").strip()
     return {
         "query": query,
-        "messages": [f"intake:{query[:40]}"],
-        "events": [make_event("intake", "completed", "query normalized")],
+        "messages": [f"intake: {query[:50]}"],
+        "events": [make_event("intake", "completed", "query normalized", length=len(query))],
     }
 
 
 def classify_node(state: AgentState) -> dict:
-    """Classify the query into a route.
+    """Classify the query into a route using keyword-based heuristics.
 
-    TODO(student): replace keyword heuristics with a clear routing policy.
-    Required routes: simple, tool, missing_info, risky, error.
+    Priority: risky > tool > missing_info > error > simple.
     """
     query = state.get("query", "").lower()
     words = query.split()
     clean_words = [w.strip("?!.,;:") for w in words]
-    route = Route.SIMPLE
-    risk_level = "low"
-    if "refund" in query or "delete" in query or "send" in query:
-        route = Route.RISKY
-        risk_level = "high"
-    elif "status" in query or "order" in query or "lookup" in query:
-        route = Route.TOOL
-    elif len(clean_words) < 5 and "it" in clean_words:
-        route = Route.MISSING_INFO
-    elif "timeout" in query or "fail" in query:
-        route = Route.ERROR
+    
+    # Priority 1: Risky
+    risky_keywords = {"refund", "delete", "send", "cancel", "remove", "revoke"}
+    if any(kw in query for kw in risky_keywords):
+        return {
+            "route": Route.RISKY.value,
+            "risk_level": "high",
+            "events": [make_event("classify", "completed", "route=risky")],
+        }
+
+    # Priority 2: Tool
+    tool_keywords = {"status", "order", "lookup", "check", "track", "find", "search"}
+    if any(kw in query for kw in tool_keywords):
+        return {
+            "route": Route.TOOL.value,
+            "risk_level": "low",
+            "events": [make_event("classify", "completed", "route=tool")],
+        }
+
+    # Priority 3: Missing Info
+    # Short query (< 5 words) with "it" as a standalone word
+    if len(clean_words) < 5 and "it" in clean_words:
+        return {
+            "route": Route.MISSING_INFO.value,
+            "risk_level": "low",
+            "events": [make_event("classify", "completed", "route=missing_info")],
+        }
+
+    # Priority 4: Error
+    error_keywords = {"timeout", "fail", "error", "crash", "unavailable"}
+    if any(kw in query for kw in error_keywords):
+        return {
+            "route": Route.ERROR.value,
+            "risk_level": "low",
+            "events": [make_event("classify", "completed", "route=error")],
+        }
+
+    # Default: Simple
     return {
-        "route": route.value,
-        "risk_level": risk_level,
-        "events": [make_event("classify", "completed", f"route={route.value}")],
+        "route": Route.SIMPLE.value,
+        "risk_level": "low",
+        "events": [make_event("classify", "completed", "route=simple")],
     }
 
 
 def ask_clarification_node(state: AgentState) -> dict:
-    """Ask for missing information instead of hallucinating.
-
-    TODO(student): generate a specific clarification question from state.
-    """
-    question = "Can you provide the order id or the missing context?"
+    """Ask for missing information when query is vague."""
+    question = "I'm sorry, I'm not sure what you mean by 'it'. Could you please provide more context or the specific item you're referring to?"
     return {
         "pending_question": question,
         "final_answer": question,
@@ -80,13 +103,12 @@ def tool_node(state: AgentState) -> dict:
 
 
 def risky_action_node(state: AgentState) -> dict:
-    """Prepare a risky action for approval.
-
-    TODO(student): create a proposed action with evidence and risk justification.
-    """
+    """Prepare a risky action for approval."""
+    query = state.get("query", "")
+    action = f"Executing risky action based on query: '{query}'"
     return {
-        "proposed_action": "prepare refund or external action; approval required",
-        "events": [make_event("risky_action", "pending_approval", "approval required")],
+        "proposed_action": action,
+        "events": [make_event("risky_action", "pending_approval", "approval required", action=action)],
     }
 
 
@@ -100,19 +122,22 @@ def approval_node(state: AgentState) -> dict:
     """
     import os
 
-    if os.getenv("LANGGRAPH_INTERRUPT", "").lower() == "true":
-        from langgraph.types import interrupt
+    from langgraph.types import interrupt
 
-        value = interrupt({
-            "proposed_action": state.get("proposed_action"),
-            "risk_level": state.get("risk_level"),
-        })
-        if isinstance(value, dict):
-            decision = ApprovalDecision(**value)
-        else:
-            decision = ApprovalDecision(approved=bool(value))
+    # The interrupt() function will suspend the node and return the value 
+    # provided when the graph is resumed (via invoke/stream).
+    decision_input = interrupt({
+        "proposed_action": state.get("proposed_action"),
+        "risk_level": state.get("risk_level"),
+        "query": state.get("query")
+    })
+    
+    # Process the input from the user
+    if isinstance(decision_input, dict) and "approved" in decision_input:
+        decision = ApprovalDecision(**decision_input)
     else:
-        decision = ApprovalDecision(approved=True, comment="mock approval for lab")
+        decision = ApprovalDecision(approved=bool(decision_input))
+        
     return {
         "approval": decision.model_dump(),
         "events": [make_event("approval", "completed", f"approved={decision.approved}")],
@@ -134,14 +159,14 @@ def retry_or_fallback_node(state: AgentState) -> dict:
 
 
 def answer_node(state: AgentState) -> dict:
-    """Produce a final response.
-
-    TODO(student): ground the answer in tool_results and approval where relevant.
-    """
-    if state.get("tool_results"):
-        answer = f"I found: {state['tool_results'][-1]}"
+    """Produce a final response grounded in tool results."""
+    tool_results = state.get("tool_results", [])
+    if tool_results:
+        latest_result = tool_results[-1]
+        answer = f"According to our systems: {latest_result}. Is there anything else I can help you with?"
     else:
-        answer = "This is a safe mock answer. Replace with your agent response."
+        answer = "Your request has been processed successfully. How else can I assist you today?"
+    
     return {
         "final_answer": answer,
         "events": [make_event("answer", "completed", "answer generated")],

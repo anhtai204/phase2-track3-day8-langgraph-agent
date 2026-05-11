@@ -22,6 +22,8 @@ class ScenarioMetric(BaseModel):
     approval_observed: bool = False
     latency_ms: int = 0
     errors: list[str] = Field(default_factory=list)
+    events: list[dict[str, Any]] = Field(default_factory=list)
+    messages: list[str] = Field(default_factory=list)
 
 
 class MetricsReport(BaseModel):
@@ -56,6 +58,8 @@ def metric_from_state(state: dict[str, Any], expected_route: str, approval_requi
         approval_required=approval_required,
         approval_observed=approval is not None,
         errors=list(errors),
+        events=list(events),
+        messages=list(state.get("messages", []) or []),
     )
 
 
